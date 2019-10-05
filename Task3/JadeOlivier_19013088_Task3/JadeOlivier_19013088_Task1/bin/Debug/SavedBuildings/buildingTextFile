@@ -1,0 +1,6 @@
+Resource,14,16,5,5,Day Walkers,w,Steel,68,-3,4,
+Factory,3,5,5,5,Day Walkers,U,MeleeUnit,5,
+Factory,3,7,5,5,Night Riders,U,MeleeUnit,5,
+Resource,9,11,5,5,Night Riders,W,Wood,84,64,4,
+Factory,2,17,5,5,Day Walkers,U,MeleeUnit,5,
+Factory,15,8,5,5,Day Walkers,U,RangedUnit,5,

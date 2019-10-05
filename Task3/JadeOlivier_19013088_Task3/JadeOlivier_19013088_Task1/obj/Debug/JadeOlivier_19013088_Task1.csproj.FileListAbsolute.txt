@@ -1,0 +1,10 @@
+C:\Users\jadeo\Desktop\GADE6112\Task1\JadeOlivier_19013088_Task1\JadeOlivier_19013088_Task1\bin\Debug\JadeOlivier_19013088_Task1.exe.config
+C:\Users\jadeo\Desktop\GADE6112\Task1\JadeOlivier_19013088_Task1\JadeOlivier_19013088_Task1\bin\Debug\JadeOlivier_19013088_Task1.exe
+C:\Users\jadeo\Desktop\GADE6112\Task1\JadeOlivier_19013088_Task1\JadeOlivier_19013088_Task1\bin\Debug\JadeOlivier_19013088_Task1.pdb
+C:\Users\jadeo\Desktop\GADE6112\Task1\JadeOlivier_19013088_Task1\JadeOlivier_19013088_Task1\obj\Debug\JadeOlivier_19013088_Task1.csprojAssemblyReference.cache
+C:\Users\jadeo\Desktop\GADE6112\Task1\JadeOlivier_19013088_Task1\JadeOlivier_19013088_Task1\obj\Debug\JadeOlivier_19013088_Task1.frmBattlefield.resources
+C:\Users\jadeo\Desktop\GADE6112\Task1\JadeOlivier_19013088_Task1\JadeOlivier_19013088_Task1\obj\Debug\JadeOlivier_19013088_Task1.Properties.Resources.resources
+C:\Users\jadeo\Desktop\GADE6112\Task1\JadeOlivier_19013088_Task1\JadeOlivier_19013088_Task1\obj\Debug\JadeOlivier_19013088_Task1.csproj.GenerateResource.cache
+C:\Users\jadeo\Desktop\GADE6112\Task1\JadeOlivier_19013088_Task1\JadeOlivier_19013088_Task1\obj\Debug\JadeOlivier_19013088_Task1.csproj.CoreCompileInputs.cache
+C:\Users\jadeo\Desktop\GADE6112\Task1\JadeOlivier_19013088_Task1\JadeOlivier_19013088_Task1\obj\Debug\JadeOlivier_19013088_Task1.exe
+C:\Users\jadeo\Desktop\GADE6112\Task1\JadeOlivier_19013088_Task1\JadeOlivier_19013088_Task1\obj\Debug\JadeOlivier_19013088_Task1.pdb
