@@ -385,14 +385,17 @@ namespace JadeOlivier_19013088_Task1
                     FactoryBuilding fb = (FactoryBuilding)temp;
                     if (fb.X != this.XPos && fb.Y != this.YPos)
                     {
-                        xDis = Math.Abs(this.XPos - fb.X);
-                        yDis = Math.Abs(this.YPos - fb.Y);
-                        workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
-
-                        if (workingOut < closest)
+                        if (fb.Team != this.Faction)
                         {
-                            closest = workingOut;
-                            returnVal = fb;
+                            xDis = Math.Abs(this.XPos - fb.X);
+                            yDis = Math.Abs(this.YPos - fb.Y);
+                            workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
+
+                            if (workingOut < closest)
+                            {
+                                closest = workingOut;
+                                returnVal = fb;
+                            }
                         }
                     }
                 }
@@ -401,14 +404,17 @@ namespace JadeOlivier_19013088_Task1
                     ResourceBuilding rb = (ResourceBuilding)temp;
                     if (rb.X != this.XPos && rb.Y != this.YPos)
                     {
-                        xDis = Math.Abs(this.XPos - rb.X);
-                        yDis = Math.Abs(this.YPos - rb.Y);
-                        workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
-
-                        if (workingOut < closest)
+                        if (rb.Team != this.Faction)
                         {
-                            closest = workingOut;
-                            returnVal = rb;
+                            xDis = Math.Abs(this.XPos - rb.X);
+                            yDis = Math.Abs(this.YPos - rb.Y);
+                            workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
+
+                            if (workingOut < closest)
+                            {
+                                closest = workingOut;
+                                returnVal = rb;
+                            }
                         }
                     }
                 }

@@ -430,7 +430,7 @@ namespace JadeOlivier_19013088_Task1
             int workingOut, xDis, yDis;
             int closest = 1000;
             Unit returnVal = this;
-            foreach(Unit temp in unitClosetCheck)
+            foreach (Unit temp in unitClosetCheck)
             {
                 string typeCheck = temp.GetType().ToString();
                 string[] splitArray = typeCheck.Split('.');
@@ -439,16 +439,19 @@ namespace JadeOlivier_19013088_Task1
                 if (typeCheck == "MeleeUnit")
                 {
                     MeleeUnit m = (MeleeUnit)temp;
-                    if(m.XPos != this.XPos && m.YPos != this.YPos)
+                    if (m.XPos != this.XPos && m.YPos != this.YPos)
                     {
-                        xDis = Math.Abs(this.XPos - m.XPos);
-                        yDis = Math.Abs(this.YPos - m.YPos);
-                        workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
-
-                        if (workingOut < closest)
+                        if (m.Faction != this.Faction)
                         {
-                            closest = workingOut;
-                            returnVal = m;
+                            xDis = Math.Abs(this.XPos - m.XPos);
+                            yDis = Math.Abs(this.YPos - m.YPos);
+                            workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
+
+                            if (workingOut < closest)
+                            {
+                                closest = workingOut;
+                                returnVal = m;
+                            }
                         }
                     }
                 }
@@ -457,14 +460,17 @@ namespace JadeOlivier_19013088_Task1
                     RangedUnit r = (RangedUnit)temp;
                     if (r.XPos != this.XPos && r.YPos != this.YPos)
                     {
-                        xDis = Math.Abs(this.XPos - r.XPos);
-                        yDis = Math.Abs(this.YPos - r.YPos);
-                        workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
-
-                        if (workingOut < closest)
+                        if (r.Faction != this.Faction)
                         {
-                            closest = workingOut;
-                            returnVal = r;
+                            xDis = Math.Abs(this.XPos - r.XPos);
+                            yDis = Math.Abs(this.YPos - r.YPos);
+                            workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
+
+                            if (workingOut < closest)
+                            {
+                                closest = workingOut;
+                                returnVal = r;
+                            }
                         }
                     }
                 }
@@ -473,7 +479,7 @@ namespace JadeOlivier_19013088_Task1
             return returnVal;
         }
 
-        public  Building ClosestUnit(Building[] closestBuilding)
+        public Building ClosestUnit(Building[] closestBuilding)
         {
             int workingOut, xDis, yDis;
             int closest = 1000;
@@ -489,14 +495,17 @@ namespace JadeOlivier_19013088_Task1
                     FactoryBuilding fb = (FactoryBuilding)temp;
                     if (fb.X != this.XPos && fb.Y != this.YPos)
                     {
-                        xDis = Math.Abs(this.XPos - fb.X);
-                        yDis = Math.Abs(this.YPos - fb.Y);
-                        workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
-
-                        if (workingOut < closest)
+                        if (fb.Team != this.Faction)
                         {
-                            closest = workingOut;
-                            returnVal = fb;
+                            xDis = Math.Abs(this.XPos - fb.X);
+                            yDis = Math.Abs(this.YPos - fb.Y);
+                            workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
+
+                            if (workingOut < closest)
+                            {
+                                closest = workingOut;
+                                returnVal = fb;
+                            }
                         }
                     }
                 }
@@ -505,14 +514,17 @@ namespace JadeOlivier_19013088_Task1
                     ResourceBuilding rb = (ResourceBuilding)temp;
                     if (rb.X != this.XPos && rb.Y != this.YPos)
                     {
-                        xDis = Math.Abs(this.XPos - rb.X);
-                        yDis = Math.Abs(this.YPos - rb.Y);
-                        workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
-
-                        if (workingOut < closest)
+                        if (rb.Team != this.Faction)
                         {
-                            closest = workingOut;
-                            returnVal = rb;
+                            xDis = Math.Abs(this.XPos - rb.X);
+                            yDis = Math.Abs(this.YPos - rb.Y);
+                            workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
+
+                            if (workingOut < closest)
+                            {
+                                closest = workingOut;
+                                returnVal = rb;
+                            }
                         }
                     }
                 }
