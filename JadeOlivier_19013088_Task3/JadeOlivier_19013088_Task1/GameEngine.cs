@@ -41,6 +41,83 @@ namespace JadeOlivier_19013088_Task1
                         {
                             if (obj.Health > (0.25 * obj.MaxHealth))
                             {
+                                Building closestBuilding = obj.ClosestUnit(MapTracker.buildingArray);
+                                if (obj.IsAttacking == false && obj.IsInRange(closestBuilding) == false)
+                                {
+                                    direction = obj.Move(closestBuilding);
+                                    switch (direction)
+                                    {
+                                        case "Right":
+                                            {
+                                                if (obj.XPos != 20)
+                                                {
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[obj.YPos, obj.XPos - 1] = '.';
+                                                }
+                                                else
+                                                {
+                                                    obj.XPos = 0;
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[obj.YPos, 19] = '.';
+                                                }
+                                                break;
+                                            }
+                                        case "Left":
+                                            {
+                                                if (obj.XPos != -1)
+                                                {
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[obj.YPos, obj.XPos + 1] = '.';
+                                                }
+                                                else
+                                                {
+                                                    obj.XPos = 19;
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[obj.YPos, 0] = '.';
+                                                }
+                                                break;
+                                            }
+                                        case "Up":
+                                            {
+                                                if (obj.YPos != 20)
+                                                {
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[obj.YPos - 1, obj.XPos] = '.';
+                                                }
+                                                else
+                                                {
+                                                    obj.YPos = 0;
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[19, obj.XPos] = '.';
+                                                }
+                                                break;
+                                            }
+                                        case "Down":
+                                            {
+                                                if (obj.YPos != 0)
+                                                {
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[obj.YPos + 1, obj.XPos] = '.';
+                                                }
+                                                else
+                                                {
+                                                    obj.YPos = 19;
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[0, obj.XPos] = '.';
+                                                }
+                                                break;
+                                            }
+                                    }
+
+                                }
+                                else if (obj.IsInRange(closestBuilding) == true)
+                                {
+                                    obj.IsAttacking = true;
+                                    obj.Combat(closestBuilding);
+                                }
+
+
+
                                 Unit closest = obj.ClosestUnit(MapTracker.unitArray);
 
                                 if (obj.IsAttacking == false && obj.IsInRange(closest) == false)

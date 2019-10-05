@@ -12,6 +12,7 @@ namespace JadeOlivier_19013088_Task1
         private string unitType;
         private int produtionSpeed;
         private int spawnPoint;
+        private int resourceToUnit;
 
         GameEngine ge = new GameEngine();
 
@@ -23,8 +24,9 @@ namespace JadeOlivier_19013088_Task1
         public char Symbol { get => base.symbol;}
 
         public int ProdutionSpeed { get => produtionSpeed;}
+        public int ResourceToUnit { get => resourceToUnit;}
 
-        public FactoryBuilding(int x, int y, string team, char symb, string unitToProduce, int speed) : base(x, y, 5, team, symb)
+        public FactoryBuilding(int x, int y, string team, char symb, string unitToProduce, int speed, int resourcesTaken) : base(x, y, 5, team, symb)
         {
             this.produtionSpeed = speed;
             this.unitType = unitToProduce;
@@ -36,6 +38,7 @@ namespace JadeOlivier_19013088_Task1
             {
                 this.spawnPoint = x - 1;
             }
+            this.resourceToUnit = resourcesTaken;
         }
 
         public FactoryBuilding(int x, int y, int hp, int maxHP, string team, char symb, string unitToProduce, int speed) : base(x, y, hp, maxHP, team, symb)

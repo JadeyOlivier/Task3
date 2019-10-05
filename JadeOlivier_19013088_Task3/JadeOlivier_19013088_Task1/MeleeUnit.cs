@@ -168,6 +168,153 @@ namespace JadeOlivier_19013088_Task1
             return returnVal;
         }
 
+        public string Move(Building buildingToEngage)
+        {
+            string returnVal = "";
+            string typeCheck = buildingToEngage.GetType().ToString();
+            string[] splitArray = typeCheck.Split('.');
+            typeCheck = splitArray[splitArray.Length - 1];
+
+            if (typeCheck == "FactoryBuilding")
+            {
+                FactoryBuilding fb = (FactoryBuilding)buildingToEngage;
+                if ((Math.Abs(fb.X - this.XPos) > Math.Abs(fb.Y - this.YPos)))
+                {
+                    if ((fb.X - this.XPos) > 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'm' || ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'M' || ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'r' || ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'R')
+                        {
+                            this.YPos++;
+                            this.XPos++;
+                            returnVal = "Right";
+                        }
+                        else
+                        {
+                            this.XPos++;
+                            returnVal = "Right";
+                        }
+                    }
+                    else if ((fb.X - this.XPos) < 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'm' || ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'M' || ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'r' || ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'R')
+                        {
+                            this.YPos++;
+                            this.XPos--;
+                            returnVal = "Left";
+                        }
+                        else
+                        {
+                            this.XPos--;
+                            returnVal = "Left";
+                        }
+
+
+                    }
+                }
+                else
+                {
+                    if ((fb.Y - this.YPos) > 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'r' || ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'R' || ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos - 1] == 'm' || ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'M')
+                        {
+                            this.YPos++;
+                            this.XPos++;
+                            returnVal = "Up";
+                        }
+                        else
+                        {
+                            this.YPos++;
+                            returnVal = "Up";
+                        }
+                    }
+                    else if ((fb.Y - this.YPos) < 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'r' || ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'R' || ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos - 1] == 'm' || ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'M')
+                        {
+                            this.YPos--;
+                            this.XPos++;
+                            returnVal = "Down";
+                        }
+                        else
+                        {
+                            this.YPos--;
+                            returnVal = "Down";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                ResourceBuilding rb = (ResourceBuilding)buildingToEngage;
+                if ((Math.Abs(rb.X - this.XPos) > Math.Abs(rb.Y - this.YPos)))
+                {
+                    if ((rb.X - this.XPos) > 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'r' || ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'R' || ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'm' || ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'M')
+                        {
+                            this.YPos++;
+                            this.XPos++;
+                            returnVal = "Right";
+                        }
+                        else
+                        {
+                            this.XPos++;
+                            returnVal = "Right";
+                        }
+                    }
+                    else if ((rb.X - this.XPos) < 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'r' || ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'R' || ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'm' || ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'M')
+                        {
+                            this.YPos++;
+                            this.XPos--;
+                            returnVal = "Left";
+                        }
+                        else
+                        {
+                            this.XPos--;
+                            returnVal = "Left";
+                        }
+
+
+                    }
+                }
+                else
+                {
+                    if ((rb.Y - this.YPos) > 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'r' || ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'R' || ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos - 1] == 'm' || ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'M')
+                        {
+                            this.YPos++;
+                            this.XPos++;
+                            returnVal = "Up";
+                        }
+                        else
+                        {
+                            this.YPos++;
+                            returnVal = "Up";
+                        }
+                    }
+                    else if ((rb.Y - this.YPos) < 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'r' || ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'R' || ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos - 1] == 'm' || ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'M')
+                        {
+                            this.YPos--;
+                            this.XPos++;
+                            returnVal = "Down";
+                        }
+                        else
+                        {
+                            this.YPos--;
+                            returnVal = "Down";
+                        }
+                    }
+                }
+            }
+
+            return returnVal;
+        }
+
         public override Unit ClosestUnit(Unit[] unitClosetCheck)
         {
             int workingOut, xDis, yDis;
