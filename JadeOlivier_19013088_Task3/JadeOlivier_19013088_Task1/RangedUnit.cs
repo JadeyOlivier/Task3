@@ -243,6 +243,41 @@ namespace JadeOlivier_19013088_Task1
             return inRange;
         }
 
+        public bool IsInRange(Building buildingInRange)
+        {
+            bool inRange = false; ;
+            string typeCheck = buildingInRange.GetType().ToString();
+            string[] splitArray = typeCheck.Split('.');
+            typeCheck = splitArray[splitArray.Length - 1];
+
+            if (typeCheck == "FactoryBuilding")
+            {
+                FactoryBuilding fb = (FactoryBuilding)buildingInRange;
+                if ((fb.Y == this.YPos && Math.Abs(fb.X - this.XPos) == 1) || (fb.X == this.XPos && Math.Abs(fb.Y - this.YPos) == 1))
+                {
+                    inRange = true;
+                }
+                else
+                {
+                    inRange = false;
+                }
+            }
+            else
+            {
+                ResourceBuilding rb = (ResourceBuilding)buildingInRange;
+                if ((rb.Y == this.YPos && Math.Abs(rb.X - this.XPos) == 1) || (rb.X == this.XPos && Math.Abs(rb.Y - this.YPos) == 1))
+                {
+                    inRange = true;
+                }
+                else
+                {
+                    inRange = false;
+                }
+            }
+
+            return inRange;
+        }
+
         public override Unit ClosestUnit(Unit[] unitClosetCheck)
         {
             int workingOut, xDis, yDis;
@@ -283,6 +318,54 @@ namespace JadeOlivier_19013088_Task1
                         {
                             closest = workingOut;
                             returnVal = r;
+                        }
+                    }
+                }
+            }
+
+            return returnVal;
+        }
+
+        public  Building ClosestUnit(Building[] closestBuilding)
+        {
+            int workingOut, xDis, yDis;
+            int closest = 1000;
+            Building returnVal = null;
+            foreach (Building temp in closestBuilding)
+            {
+                string typeCheck = temp.GetType().ToString();
+                string[] splitArray = typeCheck.Split('.');
+                typeCheck = splitArray[splitArray.Length - 1];
+
+                if (typeCheck == "FactoryBuilding")
+                {
+                    FactoryBuilding fb = (FactoryBuilding)temp;
+                    if (fb.X != this.XPos && fb.Y != this.YPos)
+                    {
+                        xDis = Math.Abs(this.XPos - fb.X);
+                        yDis = Math.Abs(this.YPos - fb.Y);
+                        workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
+
+                        if (workingOut < closest)
+                        {
+                            closest = workingOut;
+                            returnVal = fb;
+                        }
+                    }
+                }
+                else
+                {
+                    ResourceBuilding rb = (ResourceBuilding)temp;
+                    if (rb.X != this.XPos && rb.Y != this.YPos)
+                    {
+                        xDis = Math.Abs(this.XPos - rb.X);
+                        yDis = Math.Abs(this.YPos - rb.Y);
+                        workingOut = Convert.ToInt32(Math.Sqrt((xDis * xDis) + (yDis * yDis)));
+
+                        if (workingOut < closest)
+                        {
+                            closest = workingOut;
+                            returnVal = rb;
                         }
                     }
                 }
