@@ -10,14 +10,12 @@ namespace JadeOlivier_19013088_Task1
     class GameEngine
     {
         int numRounds= 0;
-        Map mapTracker = new Map(10,6);
+        public Map mapTracker = new Map(16,18,10,6);
 
         public GameEngine()
         {
             
         }
-
-        public Map MapTracker { get => mapTracker; set => mapTracker = value; }
 
         public void GameRun()
         {

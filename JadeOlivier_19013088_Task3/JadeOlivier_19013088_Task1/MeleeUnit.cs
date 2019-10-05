@@ -9,7 +9,8 @@ namespace JadeOlivier_19013088_Task1
 {
     class MeleeUnit : Unit
     {
-        Map mapTracker = new Map(10,6);
+        GameEngine ge = new GameEngine();
+
         public MeleeUnit(int meleeX, int meleeY, string meleeName,string meleeTeam, char meleeSymb, bool meleeAttacking) : base(meleeX, meleeY, meleeName, 6, 3, 2, 1, meleeTeam, meleeSymb, meleeAttacking)
         {
 
@@ -34,7 +35,7 @@ namespace JadeOlivier_19013088_Task1
                 {
                     if ((m.XPos - this.XPos) > 0)
                     {
-                        if (mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'U' || mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'u' || mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'W' || mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'w')
+                        if (ge.mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'U' || ge.mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'u' || ge.mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'W' || ge.mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'w')
                         {
                             this.YPos++;
                             this.XPos++;
@@ -48,7 +49,7 @@ namespace JadeOlivier_19013088_Task1
                     }
                     else if ((m.XPos - this.XPos) < 0)
                     {
-                        if (mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'U' || mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'u' || mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'W' || mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'w')
+                        if (ge.mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'U' || ge.mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'u' || ge.mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'W' || ge.mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'w')
                         {
                             this.YPos++;
                             this.XPos--;
@@ -67,7 +68,7 @@ namespace JadeOlivier_19013088_Task1
                 {
                     if ((m.YPos - this.YPos) > 0)
                     {
-                        if (mapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'U' || mapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'u' || mapTracker.mapVisuals[this.YPos + 1, this.XPos - 1] == 'W' || mapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'w')
+                        if (ge.mapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'U' || ge.mapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'u' || ge.mapTracker.mapVisuals[this.YPos + 1, this.XPos - 1] == 'W' || ge.mapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'w')
                         {
                             this.YPos++;
                             this.XPos++;
@@ -81,7 +82,7 @@ namespace JadeOlivier_19013088_Task1
                     }
                     else if ((m.YPos - this.YPos) < 0)
                     {
-                        if (mapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'U' || mapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'u' || mapTracker.mapVisuals[this.YPos - 1, this.XPos - 1] == 'W' || mapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'w')
+                        if (ge.mapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'U' || ge.mapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'u' || ge.mapTracker.mapVisuals[this.YPos - 1, this.XPos - 1] == 'W' || ge.mapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'w')
                         {
                             this.YPos--;
                             this.XPos++;
@@ -102,7 +103,7 @@ namespace JadeOlivier_19013088_Task1
                 {
                     if ((r.XPos - this.XPos) > 0)
                     {
-                        if (mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'U' || mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'u' || mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'W' || mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'w')
+                        if (ge.mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'U' || ge.mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'u' || ge.mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'W' || ge.mapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'w')
                         {
                             this.YPos++;
                             this.XPos++;
@@ -116,7 +117,7 @@ namespace JadeOlivier_19013088_Task1
                     }
                     else if ((r.XPos - this.XPos) < 0)
                     {
-                        if (mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'U' || mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'u' || mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'W' || mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'w')
+                        if (ge.mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'U' || ge.mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'u' || ge.mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'W' || ge.mapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'w')
                         {
                             this.YPos++;
                             this.XPos--;
@@ -135,7 +136,7 @@ namespace JadeOlivier_19013088_Task1
                 {
                     if ((r.YPos - this.YPos) > 0)
                     {
-                        if (mapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'U' || mapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'u' || mapTracker.mapVisuals[this.YPos + 1, this.XPos - 1] == 'W' || mapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'w')
+                        if (ge.mapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'U' || ge.mapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'u' || ge.mapTracker.mapVisuals[this.YPos + 1, this.XPos - 1] == 'W' || ge.mapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'w')
                         {
                             this.YPos++;
                             this.XPos++;
@@ -149,7 +150,7 @@ namespace JadeOlivier_19013088_Task1
                     }
                     else if ((r.YPos - this.YPos) < 0)
                     {
-                        if (mapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'U' || mapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'u' || mapTracker.mapVisuals[this.YPos - 1, this.XPos - 1] == 'W' || mapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'w')
+                        if (ge.mapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'U' || ge.mapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'u' || ge.mapTracker.mapVisuals[this.YPos - 1, this.XPos - 1] == 'W' || ge.mapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'w')
                         {
                             this.YPos--;
                             this.XPos++;
@@ -244,10 +245,18 @@ namespace JadeOlivier_19013088_Task1
         public override bool IsDead()
         {
             bool unitDead;
-
             if (this.Health <= 0)
             {
                 unitDead = true;
+                ge.mapTracker.mapVisuals[this.YPos, this.XPos] = '.';
+                if (this.Faction == "Day Walkers")
+                {
+                    ge.mapTracker.NumDayWalkers--;
+                }
+                else
+                {
+                    ge.mapTracker.NumNightRiders--;
+                }
             }
             else
             {

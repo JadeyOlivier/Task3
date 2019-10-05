@@ -11,14 +11,14 @@ namespace JadeOlivier_19013088_Task1
     {
         
         Random rgn = new Random();
-        public const int HEIGHT = 20;
-        public const int WIDTH = 20;
 
         int unitAmount;
         int buildingAmount;
         public Unit[] unitArray;
-        public char[,] mapVisuals = new char[WIDTH, HEIGHT];
+        public char[,] mapVisuals;
         public Building[] buildingArray;
+        public int width;
+        public int height;
 
         private int numNightRiders;
         private int numDayWalkers;
@@ -28,8 +28,12 @@ namespace JadeOlivier_19013088_Task1
         public int NumNightRiders { get => numNightRiders; set => numNightRiders = value; }
         public int NumDayWalkers { get => numDayWalkers; set => numDayWalkers = value; }
 
-        public Map(int numUnits, int numBuildings)
+        public Map(int mapHeight, int mapWidth, int numUnits, int numBuildings)
         {
+            
+            this.width = mapWidth;
+            this.height = mapHeight;
+            mapVisuals = new char[width, height];
             this.UnitAmount = numUnits;
             unitArray = new Unit[numUnits];
             this.BuildingAmount = numBuildings;
@@ -243,9 +247,9 @@ namespace JadeOlivier_19013088_Task1
                 }
             }
 
-            for (int b = 0; b <= HEIGHT - 1; b++)
+            for (int b = 0; b <= height - 1; b++)
             {
-                for (int p = 0; p <= WIDTH - 1; p++)
+                for (int p = 0; p <= width - 1; p++)
                 {
                     if (mapVisuals[b, p] != 'R' && mapVisuals[b, p] != 'r' && mapVisuals[b, p] != 'M' && mapVisuals[b, p] != 'm' && mapVisuals[b, p] != 'W' && mapVisuals[b, p] != 'w' && mapVisuals[b, p] != 'U' && mapVisuals[b, p] != 'u')
                     {
@@ -261,9 +265,9 @@ namespace JadeOlivier_19013088_Task1
         {
             string mapShow = "";
 
-            for (int i = 0; i <= HEIGHT - 1; i++)
+            for (int i = 0; i <= height - 1; i++)
             {
-                for (int j = 0; j <= WIDTH - 1; j++)
+                for (int j = 0; j <= width - 1; j++)
                 {
                     mapShow += Convert.ToString(mapVisuals[j, i]);
                 }
@@ -280,9 +284,9 @@ namespace JadeOlivier_19013088_Task1
             char symbol;
             bool attackConfirmed;
 
-            for (int b = 0; b <= HEIGHT - 1; b++)
+            for (int b = 0; b <= height - 1; b++)
             {
-                for (int p = 0; p <= WIDTH - 1; p++)
+                for (int p = 0; p <= width - 1; p++)
                 {
                     mapVisuals[b, p] = ' ';
                 }
@@ -373,9 +377,9 @@ namespace JadeOlivier_19013088_Task1
                 lineBuilding = readerBuildings.ReadLine();
             }
 
-            for (int b = 0; b <= HEIGHT - 1; b++)
+            for (int b = 0; b <= height - 1; b++)
             {
-                for (int p = 0; p <= WIDTH - 1; p++)
+                for (int p = 0; p <= width - 1; p++)
                 {
                     if (mapVisuals[b, p] != 'R' && mapVisuals[b, p] != 'r' && mapVisuals[b, p] != 'M' && mapVisuals[b, p] != 'm' && mapVisuals[b, p] != 'W' && mapVisuals[b, p] != 'w' && mapVisuals[b, p] != 'U' && mapVisuals[b, p] != 'u')
                     {
