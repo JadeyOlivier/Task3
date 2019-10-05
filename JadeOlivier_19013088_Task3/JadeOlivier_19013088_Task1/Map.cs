@@ -30,7 +30,7 @@ namespace JadeOlivier_19013088_Task1
 
         public Map(int mapHeight, int mapWidth, int numUnits, int numBuildings)
         {
-            
+            const int HEIGHT = mapHeight;
             this.width = mapWidth;
             this.height = mapHeight;
             mapVisuals = new char[width, height];
