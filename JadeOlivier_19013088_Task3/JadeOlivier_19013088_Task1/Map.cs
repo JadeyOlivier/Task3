@@ -23,11 +23,14 @@ namespace JadeOlivier_19013088_Task1
 
         private int numNightRiders;
         private int numDayWalkers;
+        int dwBuildings, nrBuildings;
 
         public int UnitAmount { get => unitAmount; set => unitAmount = value; }
         public int BuildingAmount { get => buildingAmount; set => buildingAmount = value; }
         public int NumNightRiders { get => numNightRiders; set => numNightRiders = value; }
         public int NumDayWalkers { get => numDayWalkers; set => numDayWalkers = value; }
+        public int DwBuildings { get => dwBuildings; set => dwBuildings = value; }
+        public int NrBuildings { get => nrBuildings; set => nrBuildings = value; }
 
         public Map(int mapHeight, int mapWidth, int numUnits, int numBuildings)
         {
@@ -189,6 +192,7 @@ namespace JadeOlivier_19013088_Task1
                                 resource = "Wood";
                                 avaliableResources = rgn.Next(50, 201);
                                 perRound = rgn.Next(1, 5);
+                                NrBuildings++;
                             }
                             else
                             {
@@ -197,6 +201,7 @@ namespace JadeOlivier_19013088_Task1
                                 resource = "Steel";
                                 avaliableResources = rgn.Next(50, 201);
                                 perRound = rgn.Next(1, 5);
+                                DwBuildings++;
                             }
 
                             mapVisuals[yPos, xPos] = symbol;
@@ -219,11 +224,13 @@ namespace JadeOlivier_19013088_Task1
                             {
                                 teamName = "Night Riders";
                                 symbol = 'U';
+                                NrBuildings++;
                             }
                             else
                             {
                                 teamName = "Day Walkers";
                                 symbol = 'U';
+                                DwBuildings++;
                             }
 
                             unitToProduce = rgn.Next(0, 2);
@@ -242,7 +249,7 @@ namespace JadeOlivier_19013088_Task1
                             }
                             mapVisuals[yPos, xPos] = symbol;
 
-                            buildingArray[k] = new FactoryBuilding(xPos, yPos, teamName, symbol, unitType, 5);
+                            buildingArray[k] = new FactoryBuilding(xPos, yPos, teamName, symbol, unitType, 5, 4);
                             break;
                         }
                 }
