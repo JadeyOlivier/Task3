@@ -76,7 +76,22 @@ namespace JadeOlivier_19013088_Task1
 
         public override void Combat(Unit attackingUnit)
         {
-            throw new NotImplementedException();
+            string typeCheck = attackingUnit.GetType().ToString();
+            string[] splitArray = typeCheck.Split('.');
+            typeCheck = splitArray[splitArray.Length - 1];
+
+            if (typeCheck == "MeleeUnit")
+            {
+                MeleeUnit mu = (MeleeUnit)attackingUnit;
+                mu.Health -= this.Attk;
+                this.isAttacking = false;
+            }
+            else
+            {
+                RangedUnit ru = (RangedUnit)attackingUnit;
+                ru.Health -= this.Attk;
+                this.IsAttacking = false;
+            }
         }
 
         public override bool IsDead()

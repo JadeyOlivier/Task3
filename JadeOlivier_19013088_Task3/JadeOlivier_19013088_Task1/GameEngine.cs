@@ -790,7 +790,7 @@ namespace JadeOlivier_19013088_Task1
                                     {
                                         case "Right":
                                             {
-                                                if (obj.XPos != 20)
+                                                if (obj.XPos != HEIGHT)
                                                 {
                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                     mapTracker.mapVisuals[obj.YPos, obj.XPos - 1] = '.';
@@ -820,7 +820,7 @@ namespace JadeOlivier_19013088_Task1
                                             }
                                         case "Up":
                                             {
-                                                if (obj.YPos != 20)
+                                                if (obj.YPos != WIDTH)
                                                 {
                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                     mapTracker.mapVisuals[obj.YPos - 1, obj.XPos] = '.';
