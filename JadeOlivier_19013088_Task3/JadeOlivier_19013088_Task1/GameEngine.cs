@@ -10,7 +10,9 @@ namespace JadeOlivier_19013088_Task1
     class GameEngine
     {
         int numRounds= 0;
-        Map mapTracker = new Map(25,30,15,6);
+        const int HEIGHT = 30;
+        const int WIDTH = 25;
+        Map mapTracker = new Map(WIDTH,HEIGHT,15,6);
 
         public GameEngine()
         {
@@ -401,7 +403,7 @@ namespace JadeOlivier_19013088_Task1
                         }
                     }                   
                 }
-                else
+                else if (typeCheck == "RangedUnit")
                 {
                     RangedUnit obj = (RangedUnit)temp;
                     unitDied = obj.IsDead();
@@ -769,6 +771,129 @@ namespace JadeOlivier_19013088_Task1
                             }
                         }
                     }                   
+                }
+                else if (typeCheck == "WizardUnit")
+                {
+                    WizardUnit obj = (WizardUnit)temp;
+                    unitDied = obj.IsDead();
+                    if (unitDied == false)
+                    {
+                        if(numRounds% obj.Speed == 0)
+                        {
+                            if(obj.Health > (0.5 * obj.MaxHealth))
+                            {
+                                Unit closest = obj.ClosestUnit(MapTracker.unitArray);
+                                if (obj.IsAttacking == false && obj.IsInRange(closest) == false)
+                                {
+                                    direction = obj.Move(closest);
+                                    switch (direction)
+                                    {
+                                        case "Right":
+                                            {
+                                                if (obj.XPos != 20)
+                                                {
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[obj.YPos, obj.XPos - 1] = '.';
+                                                }
+                                                else
+                                                {
+                                                    obj.XPos = 0;
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[obj.YPos, 19] = '.';
+                                                }
+                                                break;
+                                            }
+                                        case "Left":
+                                            {
+                                                if (obj.XPos != -1)
+                                                {
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[obj.YPos, obj.XPos + 1] = '.';
+                                                }
+                                                else
+                                                {
+                                                    obj.XPos = 19;
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[obj.YPos, 0] = '.';
+                                                }
+                                                break;
+                                            }
+                                        case "Up":
+                                            {
+                                                if (obj.YPos != 20)
+                                                {
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[obj.YPos - 1, obj.XPos] = '.';
+                                                }
+                                                else
+                                                {
+                                                    obj.YPos = 0;
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[19, obj.XPos] = '.';
+                                                }
+                                                break;
+                                            }
+                                        case "Down":
+                                            {
+                                                if (obj.YPos != 0)
+                                                {
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[obj.YPos + 1, obj.XPos] = '.';
+                                                }
+                                                else
+                                                {
+                                                    obj.YPos = 19;
+                                                    MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                                    mapTracker.mapVisuals[0, obj.XPos] = '.';
+                                                }
+                                                break;
+                                            }
+                                    }
+
+                                }
+                                else if (obj.IsInRange(closest) == true)
+                                {
+                                    obj.IsAttacking = true;
+                                    obj.Combat(closest);
+                                }
+                            }
+                            else
+                            {
+                                direction = obj.RandomMove();
+                                switch (direction)
+                                {
+                                    case "Right":
+                                        {
+                                            obj.XPos++;
+                                            MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                            mapTracker.mapVisuals[obj.YPos, obj.XPos - 1] = '.';
+                                            break;
+                                        }
+                                    case "Left":
+                                        {
+                                            obj.XPos--;
+                                            MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                            mapTracker.mapVisuals[obj.YPos, obj.XPos + 1] = '.';
+                                            break;
+                                        }
+                                    case "Up":
+                                        {
+                                            obj.YPos++;
+                                            MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                            mapTracker.mapVisuals[obj.YPos - 1, obj.XPos] = '.';
+                                            break;
+                                        }
+                                    case "Down":
+                                        {
+                                            obj.YPos--;
+                                            MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                            mapTracker.mapVisuals[obj.YPos + 1, obj.XPos] = '.';
+                                            break;
+                                        }
+                                }
+                            }
+                        }
+                    }                    
                 }
             }
 
