@@ -54,9 +54,14 @@ namespace JadeOlivier_19013088_Task1
                     MeleeUnit obj = (MeleeUnit)temp;
                     battleInfo += obj.ToString();
                 }
-                else
+                else if (typeCheck == "RangedUnit")
                 {
                     RangedUnit obj = (RangedUnit)temp;
+                    battleInfo += obj.ToString();
+                }
+                else if (typeCheck == "WizardUnit")
+                {
+                    WizardUnit obj = (WizardUnit)temp;
                     battleInfo += obj.ToString();
                 }
             }
