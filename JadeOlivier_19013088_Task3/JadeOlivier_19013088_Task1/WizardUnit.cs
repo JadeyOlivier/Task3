@@ -8,10 +8,16 @@ namespace JadeOlivier_19013088_Task1
 {
     class WizardUnit : Unit
     {
-        public WizardUnit() : base()
+        public WizardUnit(int wizardX, int wizardY, string wizardName, string wizardTeam, char wizardSymb, bool wizardAttacking) : base(wizardX, wizardY, wizardName, 6, 6, 3, 1, wizardTeam, wizardSymb, wizardAttacking)
         {
 
         }
+
+        public WizardUnit(int wizardX, int wizardY, string wizardName, int wizardHp, int wizardMaxHP, string wizardTeam, char wizardSymb, bool wizardAttacking) : base(wizardX, wizardY, wizardName, wizardHp, wizardMaxHP, 6, 3, 1, wizardTeam, wizardSymb, wizardAttacking)
+        {
+
+        }
+
         public override Unit ClosestUnit(Unit[] unitClosetCheck)
         {
             throw new NotImplementedException();

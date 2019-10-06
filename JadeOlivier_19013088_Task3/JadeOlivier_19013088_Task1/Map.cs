@@ -14,15 +14,18 @@ namespace JadeOlivier_19013088_Task1
 
         int unitAmount;
         int buildingAmount;
+        int wizardAmount;
         public Unit[] unitArray;
         public char[,] mapVisuals;
         public Building[] buildingArray;
+
+
         public int width;
         public int height;
-        public int numBuildings;
 
         private int numNightRiders;
         private int numDayWalkers;
+        int numWizards;
         int dwBuildings, nrBuildings;
 
         public int UnitAmount { get => unitAmount; set => unitAmount = value; }
@@ -31,6 +34,7 @@ namespace JadeOlivier_19013088_Task1
         public int NumDayWalkers { get => numDayWalkers; set => numDayWalkers = value; }
         public int DwBuildings { get => dwBuildings; set => dwBuildings = value; }
         public int NrBuildings { get => nrBuildings; set => nrBuildings = value; }
+        public int NumWizards { get => numWizards; set => numWizards = value; }
 
         public Map(int mapHeight, int mapWidth, int numUnits, int numBuildings)
         {
@@ -38,8 +42,10 @@ namespace JadeOlivier_19013088_Task1
             this.width = mapWidth;
             this.height = mapHeight;
             mapVisuals = new char[width, height];
+
             this.UnitAmount = numUnits;
             unitArray = new Unit[numUnits];
+
             this.BuildingAmount = numBuildings;
             buildingArray = new Building[numBuildings];
         }
@@ -53,13 +59,13 @@ namespace JadeOlivier_19013088_Task1
 
             for (int m = 0; m <= unitArray.Length - 1; m++)
             {
-                int type = rgn.Next(0, 2);
+                int type = rgn.Next(0, 3);
                 switch (type)
                 {
                     case 0:
                         {
-                            xPos = rgn.Next(0, 20);
-                            yPos = rgn.Next(0, 20);
+                            xPos = rgn.Next(0, height);
+                            yPos = rgn.Next(0, width);
                             nameNum = rgn.Next(0, 4);
                             switch (nameNum)
                             {
@@ -104,8 +110,8 @@ namespace JadeOlivier_19013088_Task1
 
                     case 1:
                         {
-                            xPos = rgn.Next(0, 20);
-                            yPos = rgn.Next(0, 20);
+                            xPos = rgn.Next(0, height);
+                            yPos = rgn.Next(0, width);
                             nameNum = rgn.Next(0, 4);
                             switch (nameNum)
                             {
@@ -147,6 +153,16 @@ namespace JadeOlivier_19013088_Task1
                             unitArray[m] = new RangedUnit(xPos,yPos, unitName, teamName,symbol,false);
                             break;
                         }
+
+                    case 3:
+                        {
+                            xPos = rgn.Next(0, height);
+                            yPos = rgn.Next(0, width);
+                            teamName = "Wizards";
+                            symbol = 'W';
+                            unitArray[m] = new WizardUnit(xPos, yPos, unitName, teamName, symbol, false);
+                            break;
+                        }
                 }
             }
 
@@ -176,19 +192,19 @@ namespace JadeOlivier_19013088_Task1
                     //ResourceBuilding
                     case 0:
                         {
-                            xPos = rgn.Next(0, 20);
-                            yPos = rgn.Next(0, 20);
+                            xPos = rgn.Next(0, height);
+                            yPos = rgn.Next(0, width);
                             while (mapVisuals[yPos,xPos] == 'r' && mapVisuals[yPos, xPos] == 'R' && mapVisuals[yPos, xPos] == 'm' && mapVisuals[yPos, xPos] == 'M')
                             {
-                                xPos = rgn.Next(0, 20);
-                                yPos = rgn.Next(0, 20);
+                                xPos = rgn.Next(0, height);
+                                yPos = rgn.Next(0, width);
                             }
 
                             teamNum = rgn.Next(0, 2);
                             if (teamNum == 0)
                             {
                                 teamName = "Night Riders";
-                                symbol = 'W';
+                                symbol = 'O';
                                 resource = "Wood";
                                 avaliableResources = rgn.Next(50, 201);
                                 perRound = rgn.Next(1, 5);
@@ -197,7 +213,7 @@ namespace JadeOlivier_19013088_Task1
                             else
                             {
                                 teamName = "Day Walkers";
-                                symbol = 'w';
+                                symbol = 'o';
                                 resource = "Steel";
                                 avaliableResources = rgn.Next(50, 201);
                                 perRound = rgn.Next(1, 5);
@@ -212,12 +228,12 @@ namespace JadeOlivier_19013088_Task1
                     //FactoryBuilding
                     case 1:
                         {
-                            xPos = rgn.Next(0, 20);
-                            yPos = rgn.Next(0, 20);
+                            xPos = rgn.Next(0, height);
+                            yPos = rgn.Next(0, width);
                             while (mapVisuals[yPos, xPos] == 'r' && mapVisuals[yPos, xPos] == 'R' && mapVisuals[yPos, xPos] == 'm' && mapVisuals[yPos, xPos] == 'M')
                             {
-                                xPos = rgn.Next(0, 20);
-                                yPos = rgn.Next(0, 20);
+                                xPos = rgn.Next(0, height);
+                                yPos = rgn.Next(0, width);
                             }
                             teamNum = rgn.Next(0, 2);
                             if (teamNum == 0)
