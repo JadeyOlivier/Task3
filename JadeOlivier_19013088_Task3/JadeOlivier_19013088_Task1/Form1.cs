@@ -32,7 +32,7 @@ namespace JadeOlivier_19013088_Task1
             rtxProgress.Text = "";
             timerTicks++;
             lblRound.Text = timerTicks.ToString();
-            if(ge.MapTracker.NumDayWalkers > 0 && ge.MapTracker.NumNightRiders > 0)
+            if(ge.MapTracker.NumDayWalkers > 0 && ge.MapTracker.NumNightRiders > 0 && ge.MapTracker.NumWizards > 0)
             {
                 ge.GameRun();
                 lblMap.Text = ge.MapTracker.drawMap();

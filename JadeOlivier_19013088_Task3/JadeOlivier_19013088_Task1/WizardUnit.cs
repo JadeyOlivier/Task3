@@ -9,6 +9,8 @@ namespace JadeOlivier_19013088_Task1
 {
     class WizardUnit : Unit
     {
+        GameEngine ge = new GameEngine();
+
         public WizardUnit(int wizardX, int wizardY, string wizardName, string wizardTeam, char wizardSymb, bool wizardAttacking) : base(wizardX, wizardY, wizardName, 6, 6, 3, 1, wizardTeam, wizardSymb, wizardAttacking)
         {
 
@@ -96,7 +98,19 @@ namespace JadeOlivier_19013088_Task1
 
         public override bool IsDead()
         {
-            throw new NotImplementedException();
+            bool unitDead;
+            if (this.Health <= 0)
+            {
+                unitDead = true;
+                ge.MapTracker.mapVisuals[this.YPos, this.XPos] = '.';
+                ge.MapTracker.NumWizards--;
+            }
+            else
+            {
+                unitDead = false;
+            }
+
+            return unitDead;
         }
 
         public override bool IsInRange(Unit unitInRange)
