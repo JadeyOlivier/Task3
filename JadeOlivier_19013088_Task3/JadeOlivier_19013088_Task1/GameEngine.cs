@@ -10,8 +10,8 @@ namespace JadeOlivier_19013088_Task1
     class GameEngine
     {
         int numRounds= 0;
-        const int HEIGHT = 30;
-        const int WIDTH = 25;
+        private static int hEIGHT = 30;
+        private static int wIDTH = 25;
         Map mapTracker = new Map(WIDTH,HEIGHT,15,6);
 
         public GameEngine()
@@ -20,6 +20,8 @@ namespace JadeOlivier_19013088_Task1
         }
 
         public Map MapTracker { get => mapTracker; set => mapTracker = value; }
+        public static int HEIGHT { get => hEIGHT;}
+        public static int WIDTH { get => wIDTH;}
 
         public void GameRun()
         {
@@ -897,6 +899,8 @@ namespace JadeOlivier_19013088_Task1
                 }
             }
 
+
+            //Dealing with the buildings duties
             foreach (Building temp in mapTracker.buildingArray)
             {
                 string typeCheck = temp.GetType().ToString();
@@ -913,27 +917,68 @@ namespace JadeOlivier_19013088_Task1
                     FactoryBuilding factory = (FactoryBuilding)temp;
                     if(numRounds % factory.ProdutionSpeed == 0)
                     {
-                        Array.Resize(ref mapTracker.unitArray, mapTracker.unitArray.Length + 1);
-                        Unit generatedUnit = factory.generateUnit();
-                        mapTracker.unitArray[mapTracker.unitArray.Length - 1] = generatedUnit;
-
-                        typeCheck = generatedUnit.GetType().ToString();
-                        splitArray = typeCheck.Split('.');
-                        typeCheck = splitArray[splitArray.Length - 1];
-
-                        if(typeCheck == "MeleeUnit")
+                        switch (factory.Team)
                         {
-                            MeleeUnit obj = (MeleeUnit)generatedUnit;
-                            mapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                        }
-                        else
-                        {
-                            RangedUnit obj = (RangedUnit)generatedUnit;
-                            mapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                            case "Night Riders":
+                                {
+                                    if ((MapTracker.NrResources > 0) && (MapTracker.NrResources > factory.ResourceToUnit))
+                                    {
+                                        Array.Resize(ref mapTracker.unitArray, mapTracker.unitArray.Length + 1);
+                                        Unit generatedUnit = factory.generateUnit();
+                                        mapTracker.unitArray[mapTracker.unitArray.Length - 1] = generatedUnit;
+
+                                        typeCheck = generatedUnit.GetType().ToString();
+                                        splitArray = typeCheck.Split('.');
+                                        typeCheck = splitArray[splitArray.Length - 1];
+
+                                        if (typeCheck == "MeleeUnit")
+                                        {
+                                            MeleeUnit obj = (MeleeUnit)generatedUnit;
+                                            mapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                        }
+                                        else
+                                        {
+                                            RangedUnit obj = (RangedUnit)generatedUnit;
+                                            mapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                        }
+
+                                        MapTracker.NrResources -= factory.ResourceToUnit;
+                                    }
+                                    break;
+                                }
+
+                            case "Day Walkers":
+                                {
+                                    if ((MapTracker.DwResources > 0) && (MapTracker.DwResources > factory.ResourceToUnit))
+                                    {
+                                        Array.Resize(ref mapTracker.unitArray, mapTracker.unitArray.Length + 1);
+                                        Unit generatedUnit = factory.generateUnit();
+                                        mapTracker.unitArray[mapTracker.unitArray.Length - 1] = generatedUnit;
+
+                                        typeCheck = generatedUnit.GetType().ToString();
+                                        splitArray = typeCheck.Split('.');
+                                        typeCheck = splitArray[splitArray.Length - 1];
+
+                                        if (typeCheck == "MeleeUnit")
+                                        {
+                                            MeleeUnit obj = (MeleeUnit)generatedUnit;
+                                            mapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                        }
+                                        else
+                                        {
+                                            RangedUnit obj = (RangedUnit)generatedUnit;
+                                            mapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                                        }
+
+                                        MapTracker.DwResources -= factory.ResourceToUnit;
+                                    }
+                                    break;
+                                }
                         }
                     }
                 }
             }
         }
+
     }
 }

@@ -127,9 +127,14 @@ namespace JadeOlivier_19013088_Task1
                     MeleeUnit obj = (MeleeUnit)temp;
                     obj.Save();
                 }
-                else
+                else if (typeCheck == "RangedUnit")
                 {
                     RangedUnit obj = (RangedUnit)temp;
+                    obj.Save();
+                }
+                else if (typeCheck == "WizardUnit")
+                {
+                    WizardUnit obj = (WizardUnit)temp;
                     obj.Save();
                 }
             }

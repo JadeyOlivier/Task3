@@ -38,11 +38,21 @@ namespace JadeOlivier_19013088_Task1
         }
 
         public void GeneratedResources()
-        {
+        {           
             if (IsDead() == false && resourcePool > 0)
             {
-                generatedAmount += amountPerRound;
-                resourcePool -= amountPerRound;
+                if (this.Team == "Night Riders")
+                {
+                    generatedAmount += amountPerRound;
+                    resourcePool -= amountPerRound;
+                    ge.MapTracker.NrResources = generatedAmount;
+                }
+                else
+                {
+                    generatedAmount += amountPerRound;
+                    resourcePool -= amountPerRound;
+                    ge.MapTracker.DwResources = generatedAmount;
+                }                   
             }
         }
 

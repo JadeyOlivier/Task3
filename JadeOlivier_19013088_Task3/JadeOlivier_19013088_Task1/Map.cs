@@ -14,7 +14,6 @@ namespace JadeOlivier_19013088_Task1
 
         int unitAmount;
         int buildingAmount;
-        int wizardAmount;
         public Unit[] unitArray;
         public char[,] mapVisuals;
         public Building[] buildingArray;
@@ -22,6 +21,7 @@ namespace JadeOlivier_19013088_Task1
 
         public int width;
         public int height;
+        private int nrResources, dwResources;
 
         private int numNightRiders;
         private int numDayWalkers;
@@ -35,6 +35,8 @@ namespace JadeOlivier_19013088_Task1
         public int DwBuildings { get => dwBuildings; set => dwBuildings = value; }
         public int NrBuildings { get => nrBuildings; set => nrBuildings = value; }
         public int NumWizards { get => numWizards; set => numWizards = value; }
+        public int NrResources { get => nrResources; set => nrResources = value; }
+        public int DwResources { get => dwResources; set => dwResources = value; }
 
         public Map(int mapHeight, int mapWidth, int numUnits, int numBuildings)
         {
@@ -154,7 +156,7 @@ namespace JadeOlivier_19013088_Task1
                             break;
                         }
 
-                    case 3:
+                    case 2:
                         {
                             xPos = rgn.Next(0, height);
                             yPos = rgn.Next(0, width);
@@ -177,9 +179,14 @@ namespace JadeOlivier_19013088_Task1
                     MeleeUnit obj = (MeleeUnit)temp;
                     mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                 }
-                else
+                else if (typeCheck == "RangedUnit")
                 {
                     RangedUnit obj = (RangedUnit)temp;
+                    mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
+                }
+                else if (typeCheck == "WizardUnit")
+                {
+                    WizardUnit obj = (WizardUnit)temp;
                     mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                 }
             }
@@ -275,9 +282,9 @@ namespace JadeOlivier_19013088_Task1
             {
                 for (int p = 0; p <= width - 1; p++)
                 {
-                    if (mapVisuals[b, p] != 'R' && mapVisuals[b, p] != 'r' && mapVisuals[b, p] != 'M' && mapVisuals[b, p] != 'm' && mapVisuals[b, p] != 'W' && mapVisuals[b, p] != 'w' && mapVisuals[b, p] != 'U' && mapVisuals[b, p] != 'u')
+                    if (mapVisuals[p, b] != 'R' && mapVisuals[p, b] != 'r' && mapVisuals[p, b] != 'M' && mapVisuals[p, b] != 'm' && mapVisuals[p, b] != 'W' && mapVisuals[p, b] != 'w' && mapVisuals[p, b] != 'U' && mapVisuals[p, b] != 'u')
                     {
-                        mapVisuals[b, p] = '.';
+                        mapVisuals[p, b] = '.';
                     }
 
                 }
