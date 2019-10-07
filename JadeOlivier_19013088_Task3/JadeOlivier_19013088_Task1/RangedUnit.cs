@@ -10,6 +10,7 @@ namespace JadeOlivier_19013088_Task1
     class RangedUnit : Unit 
     {
         GameEngine ge = new GameEngine();
+        //Unit also checks for the closest enemy building, sees if its in range and attacks it.
 
         public RangedUnit(int randgedX, int rangedY, string rangedName, string rangedTeam, char rangedSymb,bool rangedAttacking) : base(randgedX, rangedY, rangedName, 5, 4, 1, 2, rangedTeam, rangedSymb, rangedAttacking)
         {
@@ -327,10 +328,16 @@ namespace JadeOlivier_19013088_Task1
                 mu.Health -= this.Attk;
                 this.isAttacking = false;
             }
-            else
+            else if (typeCheck == "RangedUnit")
             {
                 RangedUnit ru = (RangedUnit)attackingUnit;
                 ru.Health -= this.Attk;
+                this.IsAttacking = false;
+            }
+            else if (typeCheck == "WizardUnit")
+            {
+                WizardUnit wu = (WizardUnit)attackingUnit;
+                wu.Health -= this.Attk;
                 this.IsAttacking = false;
             }
         }
@@ -610,7 +617,7 @@ namespace JadeOlivier_19013088_Task1
             returnVal += "Their y position is: " + this.YPos + Environment.NewLine;
             returnVal += "Their name is: " + this.Name + Environment.NewLine;
             returnVal += "Their current hp is: " + this.Health + Environment.NewLine;
-            returnVal += "Their max hp is: " + this.Health + Environment.NewLine;
+            returnVal += "Their max hp is: " + this.MaxHealth + Environment.NewLine;
             returnVal += "Their attack damage is: " + this.Attk + Environment.NewLine;
             returnVal += "Their range is: " + this.AttkRange + Environment.NewLine;
             returnVal += "Their speed is: " + this.Speed + Environment.NewLine;

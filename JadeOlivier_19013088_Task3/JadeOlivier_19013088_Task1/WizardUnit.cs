@@ -11,6 +11,7 @@ namespace JadeOlivier_19013088_Task1
     {
         GameEngine ge = new GameEngine();
 
+        //Wizards only attack other units, not buildings or other wizards
         public WizardUnit(int wizardX, int wizardY, string wizardName, string wizardTeam, char wizardSymb, bool wizardAttacking) : base(wizardX, wizardY, wizardName, 6, 6, 3, 1, wizardTeam, wizardSymb, wizardAttacking)
         {
 
@@ -88,7 +89,7 @@ namespace JadeOlivier_19013088_Task1
                 mu.Health -= this.Attk;
                 this.isAttacking = false;
             }
-            else
+            else if (typeCheck == "RangedUnit")
             {
                 RangedUnit ru = (RangedUnit)attackingUnit;
                 ru.Health -= this.Attk;
@@ -361,7 +362,7 @@ namespace JadeOlivier_19013088_Task1
             returnVal += "Their y position is: " + this.YPos + Environment.NewLine;
             returnVal += "Their name is: " + this.Name + Environment.NewLine;
             returnVal += "Their current hp is: " + this.Health + Environment.NewLine;
-            returnVal += "Their max hp is: " + this.Health + Environment.NewLine;
+            returnVal += "Their max hp is: " + this.MaxHealth + Environment.NewLine;
             returnVal += "Their attack damage is: " + this.Attk + Environment.NewLine;
             returnVal += "Their range is: " + this.AttkRange + Environment.NewLine;
             returnVal += "Their speed is: " + this.Speed + Environment.NewLine;

@@ -30,7 +30,7 @@ namespace JadeOlivier_19013088_Task1
         {
             this.produtionSpeed = speed;
             this.unitType = unitToProduce;
-            if (x != ge.MapTracker.height)
+            if (x != ge.MapTracker.height - 1)
             {
                 this.spawnPoint = x + 1;
             }
@@ -45,7 +45,7 @@ namespace JadeOlivier_19013088_Task1
         {
             this.produtionSpeed = speed;
             this.unitType = unitToProduce;
-            if (x != 19)
+            if (x != ge.MapTracker.height - 1 )
             {
                 this.spawnPoint = x + 1;
             }
@@ -56,6 +56,7 @@ namespace JadeOlivier_19013088_Task1
 
         }
 
+        //Generates a unit and sends it back to the game engine to be placed in the unit array and on the map
         public Unit generateUnit()
         {        
             string teamName, unitName = "";

@@ -65,7 +65,7 @@
             // 
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.Location = new System.Drawing.Point(853, 11);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(109, 41);
             this.btnStart.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             this.btnPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPause.Location = new System.Drawing.Point(853, 54);
-            this.btnPause.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPause.Margin = new System.Windows.Forms.Padding(2);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(109, 44);
             this.btnPause.TabIndex = 3;
@@ -88,9 +88,9 @@
             // rtxProgress
             // 
             this.rtxProgress.Location = new System.Drawing.Point(531, 11);
-            this.rtxProgress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtxProgress.Margin = new System.Windows.Forms.Padding(2);
             this.rtxProgress.Name = "rtxProgress";
-            this.rtxProgress.Size = new System.Drawing.Size(307, 428);
+            this.rtxProgress.Size = new System.Drawing.Size(307, 745);
             this.rtxProgress.TabIndex = 4;
             this.rtxProgress.Text = "";
             // 
@@ -102,8 +102,8 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(531, 448);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Location = new System.Drawing.Point(856, 175);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 39);
             this.btnSave.TabIndex = 5;
@@ -114,8 +114,8 @@
             // btnRead
             // 
             this.btnRead.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRead.Location = new System.Drawing.Point(732, 448);
-            this.btnRead.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRead.Location = new System.Drawing.Point(856, 218);
+            this.btnRead.Margin = new System.Windows.Forms.Padding(2);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(106, 39);
             this.btnRead.TabIndex = 6;
@@ -135,7 +135,7 @@
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblRound);
             this.Controls.Add(this.lblMap);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmBattlefield";
             this.Text = "Battlefield";
             this.Load += new System.EventHandler(this.frmBattlefield_Load);

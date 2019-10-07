@@ -20,9 +20,13 @@ namespace JadeOlivier_19013088_Task1
         }
 
         public Map MapTracker { get => mapTracker; set => mapTracker = value; }
+        //Constants created for map height and width
         public static int HEIGHT { get => hEIGHT;}
         public static int WIDTH { get => wIDTH;}
 
+        //Units and buildings each move on their own turn if number of rounds that have happened allow the unit/building to move.
+        //Units will then either move to their closest enemy unit, attack that enemy unit or simply runaway based on its current state
+        //Resource buildings  tick up resources for the team and Factory buildings spawn units if the number of rounds falls withing thier production speed and their are enough resources to do so
         public void GameRun()
         {
             ++numRounds;

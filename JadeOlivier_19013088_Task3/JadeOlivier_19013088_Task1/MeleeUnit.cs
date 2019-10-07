@@ -10,6 +10,7 @@ namespace JadeOlivier_19013088_Task1
     class MeleeUnit : Unit
     {
         GameEngine ge = new GameEngine();
+        //Unit also checks for the closest enemy building, sees if its in range and attacks it.
 
         public MeleeUnit(int meleeX, int meleeY, string meleeName,string meleeTeam, char meleeSymb, bool meleeAttacking) : base(meleeX, meleeY, meleeName, 6, 3, 2, 1, meleeTeam, meleeSymb, meleeAttacking)
         {
@@ -435,10 +436,16 @@ namespace JadeOlivier_19013088_Task1
                 mu.Health -= this.Attk;
                 this.isAttacking = false;
             }
-            else
+            else if (typeCheck == "RangedUnit")
             {
                 RangedUnit ru = (RangedUnit)attackingUnit;
                 ru.Health -= this.Attk;
+                this.IsAttacking = false;
+            }
+            else if (typeCheck == "WizardUnit")
+            {
+                WizardUnit wu = (WizardUnit)attackingUnit;
+                wu.Health -= this.Attk;
                 this.IsAttacking = false;
             }
         }

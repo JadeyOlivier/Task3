@@ -12,6 +12,7 @@ namespace JadeOlivier_19013088_Task1
         GameEngine ge = new GameEngine();
         private string rescourceType;
         private int amountPerRound;
+        private int generatedAmount;
         private int resourcePool;
 
         public int X { get => base.x; set => base.x = value; }
@@ -20,6 +21,7 @@ namespace JadeOlivier_19013088_Task1
         public int MaxHealth { get => base.maxHealth;}
         public string Team { get => base.team;}
         public char Symbol { get => base.symbol;}
+        public int GeneratedAmount { get => generatedAmount; set => generatedAmount = value; }
 
         public ResourceBuilding(int x, int y, string team, char symb, string typeResource, int eachRound, int avaliableAmount) : base(x, y, 5, team, symb)
         {
@@ -36,6 +38,7 @@ namespace JadeOlivier_19013088_Task1
             this.health = hp;
         }
 
+        //generates a certain amount of resources each round and decreases the amount of avaliable resources 
         public void GeneratedResources()
         {           
             if (IsDead() == false && resourcePool > 0)
@@ -44,11 +47,13 @@ namespace JadeOlivier_19013088_Task1
                 {
                     resourcePool -= amountPerRound;
                     ge.MapTracker.NrResources += amountPerRound;
+                    GeneratedAmount += amountPerRound;
                 }
                 else
                 {
                     resourcePool -= amountPerRound;
                     ge.MapTracker.DwResources += amountPerRound;
+                    GeneratedAmount += amountPerRound;
                 }                   
             }
         }
@@ -79,7 +84,7 @@ namespace JadeOlivier_19013088_Task1
             returnVal += "Its symbol is: " + this.Symbol + Environment.NewLine;
             returnVal += "The resource it generates is: " + this.rescourceType + Environment.NewLine;
             returnVal += "Amount of resources generated each round is: " + this.amountPerRound + Environment.NewLine;
-            returnVal += "Generated resources/Avaliable resources: " + this.ge.MapTracker.DwResources + "/" + this.resourcePool + Environment.NewLine;
+            returnVal += "Generated resources/Avaliable resources: " + this.GeneratedAmount + "/" + this.resourcePool + Environment.NewLine;
             returnVal += "----------------------------------------" + Environment.NewLine;
             returnVal += Environment.NewLine;
 

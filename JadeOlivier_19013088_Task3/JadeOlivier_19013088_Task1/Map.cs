@@ -52,7 +52,8 @@ namespace JadeOlivier_19013088_Task1
             buildingArray = new Building[numBuildings];
         }
 
-
+        //Map is populated with new units and buildings (each type stored in their own array). These are then used to further
+        //populate a visual representation of the battlefield to be displayed on the form
         public void populateMap()
         {
             string teamName, unitName = "", resource, unitType = "";
@@ -246,13 +247,13 @@ namespace JadeOlivier_19013088_Task1
                             if (teamNum == 0)
                             {
                                 teamName = "Night Riders";
-                                symbol = 'U';
+                                symbol = 'F';
                                 NrBuildings++;
                             }
                             else
                             {
                                 teamName = "Day Walkers";
-                                symbol = 'U';
+                                symbol = 'F';
                                 DwBuildings++;
                             }
 
@@ -282,7 +283,7 @@ namespace JadeOlivier_19013088_Task1
             {
                 for (int p = 0; p <= width - 1; p++)
                 {
-                    if (mapVisuals[p, b] != 'R' && mapVisuals[p, b] != 'r' && mapVisuals[p, b] != 'M' && mapVisuals[p, b] != 'm' && mapVisuals[p, b] != 'W' && mapVisuals[p, b] != 'w' && mapVisuals[p, b] != 'U' && mapVisuals[p, b] != 'u')
+                    if (mapVisuals[p, b] != 'R' && mapVisuals[p, b] != 'r' && mapVisuals[p, b] != 'M' && mapVisuals[p, b] != 'm' && mapVisuals[p, b] != 'W' && mapVisuals[p, b] != 'o' && mapVisuals[p, b] != 'O' && mapVisuals[p, b] != 'F' && mapVisuals[p, b] != 'f')
                     {
                         mapVisuals[p, b] = '.';
                     }
@@ -306,8 +307,9 @@ namespace JadeOlivier_19013088_Task1
             }
 
             return mapShow;
-        }   
+        }
 
+        //Map is repopulatede with the previously saved values for units and buildings
         public void Read()
         {
             int index, x, y, health, maxHealth, generatedAmount, resourcePool, amountGeneratedPerRound, productionSpeed;
@@ -319,7 +321,7 @@ namespace JadeOlivier_19013088_Task1
             {
                 for (int p = 0; p <= width - 1; p++)
                 {
-                    mapVisuals[b, p] = ' ';
+                    mapVisuals[p,b] = ' ';
                 }
             }
 
@@ -345,7 +347,7 @@ namespace JadeOlivier_19013088_Task1
                     unitArray[index] = new MeleeUnit(x, y, name, health, maxHealth, team, symbol, attackConfirmed);
                     mapVisuals[y, x] = symbol;
                 }
-                else
+                else if (splitArray[0] == "Ranged")
                 {
                     x = Convert.ToInt32(splitArray[1]);
                     y = Convert.ToInt32(splitArray[2]);
@@ -357,6 +359,20 @@ namespace JadeOlivier_19013088_Task1
                     attackConfirmed = Convert.ToBoolean(splitArray[11]);
 
                     unitArray[index] = new RangedUnit(x, y, name, health, maxHealth, team, symbol, attackConfirmed);
+                    mapVisuals[y, x] = symbol;
+                }
+                else if (splitArray[0] == "Wizard")
+                {
+                    x = Convert.ToInt32(splitArray[1]);
+                    y = Convert.ToInt32(splitArray[2]);
+                    name = splitArray[3];
+                    health = Convert.ToInt32(splitArray[4]);
+                    maxHealth = Convert.ToInt32(splitArray[5]);
+                    team = splitArray[9];
+                    symbol = Convert.ToChar(splitArray[10]);
+                    attackConfirmed = Convert.ToBoolean(splitArray[11]);
+
+                    unitArray[index] = new WizardUnit(x, y, name, health, maxHealth, team, symbol, attackConfirmed);
                     mapVisuals[y, x] = symbol;
                 }
 

@@ -53,18 +53,26 @@ namespace JadeOlivier_19013088_Task1
         }
 
         //Abstract methods to be used by subclasses
+        //Movement takes in the enemy unit the current unit needs to move to and finds the shortest way of getting to that unit without moviong diagonally
         public abstract string Move(Unit unitToEngage);
 
+        //Method to deal with combatting the enemy unit once it is in range. Lowers enemy hp using current units attack value 
         public abstract void Combat(Unit attackingUnit);
 
+        //Tests if closest enemy unit is within range of the current unit 
         public abstract bool IsInRange(Unit unitInRange);
 
+        //Distance formula used to determine closest unit. If distance of the opponent unit currently being tested is less than the
+        //distance of the previously tested opponent unit, the current unit then becomes the closest unit. Once all units in the 
+        //array have been tested, the closest enemy unit is passed back to GameEngine
         public abstract Unit ClosestUnit(Unit[] unitClosetCheck);
 
+        //Tests if current units health is <= 0 and removes it from the map
         public abstract bool IsDead();
 
         public abstract void Save();
 
+        //For displaying stats of the unit
         public override abstract string ToString();   
         
         
