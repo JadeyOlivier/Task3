@@ -52,7 +52,7 @@ namespace JadeOlivier_19013088_Task1
                         }
                     }
                 }
-                else
+                else if (typeCheck == "RangedUnit")
                 {
                     RangedUnit r = (RangedUnit)temp;
                     if (r.XPos != this.XPos && r.YPos != this.YPos)
@@ -120,7 +120,149 @@ namespace JadeOlivier_19013088_Task1
 
         public override string Move(Unit unitToEngage)
         {
-            throw new NotImplementedException();
+            string returnVal = "";
+            string typeCheck = unitToEngage.GetType().ToString();
+            string[] splitArray = typeCheck.Split('.');
+            typeCheck = splitArray[splitArray.Length - 1];
+
+            if (typeCheck == "MeleeUnit")
+            {
+                MeleeUnit m = (MeleeUnit)unitToEngage;
+                if ((Math.Abs(m.XPos - this.XPos) > Math.Abs(m.YPos - this.YPos)))
+                {
+                    if ((m.XPos - this.XPos) > 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'U' || ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'u' || ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'W' || ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'w')
+                        {
+                            this.YPos++;
+                            this.XPos++;
+                            returnVal = "Right";
+                        }
+                        else
+                        {
+                            this.XPos++;
+                            returnVal = "Right";
+                        }
+                    }
+                    else if ((m.XPos - this.XPos) < 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'U' || ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'u' || ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'W' || ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'w')
+                        {
+                            this.YPos++;
+                            this.XPos--;
+                            returnVal = "Left";
+                        }
+                        else
+                        {
+                            this.XPos--;
+                            returnVal = "Left";
+                        }
+
+
+                    }
+                }
+                else
+                {
+                    if ((m.YPos - this.YPos) > 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'U' || ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'u' || ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos - 1] == 'W' || ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'w')
+                        {
+                            this.YPos++;
+                            this.XPos++;
+                            returnVal = "Up";
+                        }
+                        else
+                        {
+                            this.YPos++;
+                            returnVal = "Up";
+                        }
+                    }
+                    else if ((m.YPos - this.YPos) < 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'U' || ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'u' || ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos - 1] == 'W' || ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'w')
+                        {
+                            this.YPos--;
+                            this.XPos++;
+                            returnVal = "Down";
+                        }
+                        else
+                        {
+                            this.YPos--;
+                            returnVal = "Down";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                RangedUnit r = (RangedUnit)unitToEngage;
+                if ((Math.Abs(r.XPos - this.XPos) > Math.Abs(r.YPos - this.YPos)))
+                {
+                    if ((r.XPos - this.XPos) > 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'U' || ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'u' || ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'W' || ge.MapTracker.mapVisuals[this.YPos, this.XPos + 1] == 'w')
+                        {
+                            this.YPos++;
+                            this.XPos++;
+                            returnVal = "Right";
+                        }
+                        else
+                        {
+                            this.XPos++;
+                            returnVal = "Right";
+                        }
+                    }
+                    else if ((r.XPos - this.XPos) < 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'U' || ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'u' || ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'W' || ge.MapTracker.mapVisuals[this.YPos, this.XPos - 1] == 'w')
+                        {
+                            this.YPos++;
+                            this.XPos--;
+                            returnVal = "Left";
+                        }
+                        else
+                        {
+                            this.XPos--;
+                            returnVal = "Left";
+                        }
+
+
+                    }
+                }
+                else
+                {
+                    if ((r.YPos - this.YPos) > 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'U' || ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'u' || ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos - 1] == 'W' || ge.MapTracker.mapVisuals[this.YPos + 1, this.XPos] == 'w')
+                        {
+                            this.YPos++;
+                            this.XPos++;
+                            returnVal = "Up";
+                        }
+                        else
+                        {
+                            this.YPos++;
+                            returnVal = "Up";
+                        }
+                    }
+                    else if ((r.YPos - this.YPos) < 0)
+                    {
+                        if (ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'U' || ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'u' || ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos - 1] == 'W' || ge.MapTracker.mapVisuals[this.YPos - 1, this.XPos] == 'w')
+                        {
+                            this.YPos--;
+                            this.XPos++;
+                            returnVal = "Down";
+                        }
+                        else
+                        {
+                            this.YPos--;
+                            returnVal = "Down";
+                        }
+                    }
+                }
+            }
+
+            return returnVal;
         }
 
         public string RandomMove()

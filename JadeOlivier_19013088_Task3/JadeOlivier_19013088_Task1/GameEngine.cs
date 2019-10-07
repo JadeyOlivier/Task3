@@ -59,7 +59,7 @@ namespace JadeOlivier_19013088_Task1
                                                     {
                                                         case "Right":
                                                             {
-                                                                if (obj.XPos != 20)
+                                                                if (obj.XPos != HEIGHT)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, obj.XPos - 1] = '.';
@@ -81,7 +81,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.XPos = 19;
+                                                                    obj.XPos = HEIGHT - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, 0] = '.';
                                                                 }
@@ -89,7 +89,7 @@ namespace JadeOlivier_19013088_Task1
                                                             }
                                                         case "Up":
                                                             {
-                                                                if (obj.YPos != 20)
+                                                                if (obj.YPos != WIDTH)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos - 1, obj.XPos] = '.';
@@ -104,14 +104,14 @@ namespace JadeOlivier_19013088_Task1
                                                             }
                                                         case "Down":
                                                             {
-                                                                if (obj.YPos != 0)
+                                                                if (obj.YPos != -1)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos + 1, obj.XPos] = '.';
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.YPos = 19;
+                                                                    obj.YPos = WIDTH - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[0, obj.XPos] = '.';
                                                                 }
@@ -136,7 +136,7 @@ namespace JadeOlivier_19013088_Task1
                                                     {
                                                         case "Right":
                                                             {
-                                                                if (obj.XPos != 20)
+                                                                if (obj.XPos != HEIGHT)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, obj.XPos - 1] = '.';
@@ -158,7 +158,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.XPos = 19;
+                                                                    obj.XPos = HEIGHT - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, 0] = '.';
                                                                 }
@@ -166,7 +166,7 @@ namespace JadeOlivier_19013088_Task1
                                                             }
                                                         case "Up":
                                                             {
-                                                                if (obj.YPos != 20)
+                                                                if (obj.YPos != WIDTH)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos - 1, obj.XPos] = '.';
@@ -188,7 +188,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.YPos = 19;
+                                                                    obj.YPos = WIDTH - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[0, obj.XPos] = '.';
                                                                 }
@@ -218,7 +218,7 @@ namespace JadeOlivier_19013088_Task1
                                                     {
                                                         case "Right":
                                                             {
-                                                                if (obj.XPos != 20)
+                                                                if (obj.XPos != HEIGHT)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, obj.XPos - 1] = '.';
@@ -240,7 +240,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.XPos = 19;
+                                                                    obj.XPos = HEIGHT - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, 0] = '.';
                                                                 }
@@ -248,7 +248,7 @@ namespace JadeOlivier_19013088_Task1
                                                             }
                                                         case "Up":
                                                             {
-                                                                if (obj.YPos != 20)
+                                                                if (obj.YPos != WIDTH)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos - 1, obj.XPos] = '.';
@@ -270,7 +270,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.YPos = 19;
+                                                                    obj.YPos = WIDTH - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[0, obj.XPos] = '.';
                                                                 }
@@ -295,7 +295,7 @@ namespace JadeOlivier_19013088_Task1
                                                     {
                                                         case "Right":
                                                             {
-                                                                if (obj.XPos != 20)
+                                                                if (obj.XPos != HEIGHT)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, obj.XPos - 1] = '.';
@@ -317,7 +317,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.XPos = 19;
+                                                                    obj.XPos = HEIGHT - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, 0] = '.';
                                                                 }
@@ -325,7 +325,7 @@ namespace JadeOlivier_19013088_Task1
                                                             }
                                                         case "Up":
                                                             {
-                                                                if (obj.YPos != 20)
+                                                                if (obj.YPos != WIDTH)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos - 1, obj.XPos] = '.';
@@ -347,7 +347,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.YPos = 19;
+                                                                    obj.YPos = WIDTH - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[0, obj.XPos] = '.';
                                                                 }
@@ -429,7 +429,7 @@ namespace JadeOlivier_19013088_Task1
                                                     {
                                                         case "Right":
                                                             {
-                                                                if (obj.XPos != 20)
+                                                                if (obj.XPos != HEIGHT)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, obj.XPos - 1] = '.';
@@ -451,7 +451,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.XPos = 19;
+                                                                    obj.XPos = HEIGHT - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, 0] = '.';
                                                                 }
@@ -459,7 +459,7 @@ namespace JadeOlivier_19013088_Task1
                                                             }
                                                         case "Up":
                                                             {
-                                                                if (obj.YPos != 20)
+                                                                if (obj.YPos != WIDTH)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos - 1, obj.XPos] = '.';
@@ -481,7 +481,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.YPos = 19;
+                                                                    obj.YPos = WIDTH - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[0, obj.XPos] = '.';
                                                                 }
@@ -506,7 +506,7 @@ namespace JadeOlivier_19013088_Task1
                                                     {
                                                         case "Right":
                                                             {
-                                                                if (obj.XPos != 20)
+                                                                if (obj.XPos != HEIGHT)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, obj.XPos - 1] = '.';
@@ -528,7 +528,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.XPos = 19;
+                                                                    obj.XPos = HEIGHT - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, 0] = '.';
                                                                 }
@@ -536,7 +536,7 @@ namespace JadeOlivier_19013088_Task1
                                                             }
                                                         case "Up":
                                                             {
-                                                                if (obj.YPos != 20)
+                                                                if (obj.YPos != WIDTH)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos - 1, obj.XPos] = '.';
@@ -558,7 +558,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.YPos = 19;
+                                                                    obj.YPos = WIDTH - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[0, obj.XPos] = '.';
                                                                 }
@@ -588,7 +588,7 @@ namespace JadeOlivier_19013088_Task1
                                                     {
                                                         case "Right":
                                                             {
-                                                                if (obj.XPos != 20)
+                                                                if (obj.XPos != HEIGHT)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, obj.XPos - 1] = '.';
@@ -610,7 +610,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.XPos = 19;
+                                                                    obj.XPos = HEIGHT - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, 0] = '.';
                                                                 }
@@ -618,7 +618,7 @@ namespace JadeOlivier_19013088_Task1
                                                             }
                                                         case "Up":
                                                             {
-                                                                if (obj.YPos != 20)
+                                                                if (obj.YPos != WIDTH)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos - 1, obj.XPos] = '.';
@@ -640,7 +640,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.YPos = 19;
+                                                                    obj.YPos = WIDTH - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[0, obj.XPos] = '.';
                                                                 }
@@ -665,7 +665,7 @@ namespace JadeOlivier_19013088_Task1
                                                     {
                                                         case "Right":
                                                             {
-                                                                if (obj.XPos != 20)
+                                                                if (obj.XPos != HEIGHT)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, obj.XPos - 1] = '.';
@@ -687,7 +687,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.XPos = 19;
+                                                                    obj.XPos = HEIGHT - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos, 0] = '.';
                                                                 }
@@ -695,7 +695,7 @@ namespace JadeOlivier_19013088_Task1
                                                             }
                                                         case "Up":
                                                             {
-                                                                if (obj.YPos != 20)
+                                                                if (obj.YPos != WIDTH)
                                                                 {
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[obj.YPos - 1, obj.XPos] = '.';
@@ -717,7 +717,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 }
                                                                 else
                                                                 {
-                                                                    obj.YPos = 19;
+                                                                    obj.YPos = WIDTH - 1;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                                     mapTracker.mapVisuals[0, obj.XPos] = '.';
                                                                 }
@@ -814,7 +814,7 @@ namespace JadeOlivier_19013088_Task1
                                                 }
                                                 else
                                                 {
-                                                    obj.XPos = 19;
+                                                    obj.XPos = HEIGHT - 1;
                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                     mapTracker.mapVisuals[obj.YPos, 0] = '.';
                                                 }
@@ -844,7 +844,7 @@ namespace JadeOlivier_19013088_Task1
                                                 }
                                                 else
                                                 {
-                                                    obj.YPos = 19;
+                                                    obj.YPos = WIDTH - 1;
                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
                                                     mapTracker.mapVisuals[0, obj.XPos] = '.';
                                                 }
@@ -921,7 +921,7 @@ namespace JadeOlivier_19013088_Task1
                         {
                             case "Night Riders":
                                 {
-                                    if ((MapTracker.NrResources > 0) && (MapTracker.NrResources > factory.ResourceToUnit))
+                                    if (MapTracker.NrResources > factory.ResourceToUnit)
                                     {
                                         Array.Resize(ref mapTracker.unitArray, mapTracker.unitArray.Length + 1);
                                         Unit generatedUnit = factory.generateUnit();
@@ -949,7 +949,7 @@ namespace JadeOlivier_19013088_Task1
 
                             case "Day Walkers":
                                 {
-                                    if ((MapTracker.DwResources > 0) && (MapTracker.DwResources > factory.ResourceToUnit))
+                                    if (MapTracker.DwResources > factory.ResourceToUnit)
                                     {
                                         Array.Resize(ref mapTracker.unitArray, mapTracker.unitArray.Length + 1);
                                         Unit generatedUnit = factory.generateUnit();

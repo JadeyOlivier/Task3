@@ -11,7 +11,6 @@ namespace JadeOlivier_19013088_Task1
     {
         GameEngine ge = new GameEngine();
         private string rescourceType;
-        private int generatedAmount;
         private int amountPerRound;
         private int resourcePool;
 
@@ -43,15 +42,13 @@ namespace JadeOlivier_19013088_Task1
             {
                 if (this.Team == "Night Riders")
                 {
-                    generatedAmount += amountPerRound;
                     resourcePool -= amountPerRound;
-                    ge.MapTracker.NrResources = generatedAmount;
+                    ge.MapTracker.NrResources += amountPerRound;
                 }
                 else
                 {
-                    generatedAmount += amountPerRound;
                     resourcePool -= amountPerRound;
-                    ge.MapTracker.DwResources = generatedAmount;
+                    ge.MapTracker.DwResources += amountPerRound;
                 }                   
             }
         }
@@ -82,7 +79,7 @@ namespace JadeOlivier_19013088_Task1
             returnVal += "Its symbol is: " + this.Symbol + Environment.NewLine;
             returnVal += "The resource it generates is: " + this.rescourceType + Environment.NewLine;
             returnVal += "Amount of resources generated each round is: " + this.amountPerRound + Environment.NewLine;
-            returnVal += "Generated resources/Avaliable resources: " + this.generatedAmount + "/" + this.resourcePool + Environment.NewLine;
+            returnVal += "Generated resources/Avaliable resources: " + this.ge.MapTracker.DwResources + "/" + this.resourcePool + Environment.NewLine;
             returnVal += "----------------------------------------" + Environment.NewLine;
             returnVal += Environment.NewLine;
 
@@ -100,7 +97,7 @@ namespace JadeOlivier_19013088_Task1
             savedString += Team + ",";
             savedString += Symbol + ",";
             savedString += rescourceType + ",";
-            savedString += generatedAmount + ",";
+            savedString += ge.MapTracker.DwResources + ",";
             savedString += resourcePool + ",";
             savedString += amountPerRound + ",";
 

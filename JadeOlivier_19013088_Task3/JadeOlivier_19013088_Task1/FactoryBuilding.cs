@@ -30,7 +30,7 @@ namespace JadeOlivier_19013088_Task1
         {
             this.produtionSpeed = speed;
             this.unitType = unitToProduce;
-            if (x != 19)
+            if (x != ge.MapTracker.height)
             {
                 this.spawnPoint = x + 1;
             }
