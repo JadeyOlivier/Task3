@@ -41,7 +41,7 @@ namespace JadeOlivier_19013088_Task1
             this.resourceToUnit = resourcesTaken;
         }
 
-        public FactoryBuilding(int x, int y, int hp, int maxHP, string team, char symb, string unitToProduce, int speed) : base(x, y, hp, maxHP, team, symb)
+        public FactoryBuilding(int x, int y, int hp, int maxHP, string team, char symb, string unitToProduce, int speed,int resourcesTaken) : base(x, y, hp, maxHP, team, symb)
         {
             this.produtionSpeed = speed;
             this.unitType = unitToProduce;
@@ -53,7 +53,7 @@ namespace JadeOlivier_19013088_Task1
             {
                 this.spawnPoint = x - 1;
             }
-
+            this.resourceToUnit = resourcesTaken;
         }
 
         //Generates a unit and sends it back to the game engine to be placed in the unit array and on the map

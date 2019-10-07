@@ -273,7 +273,7 @@ namespace JadeOlivier_19013088_Task1
                             }
                             mapVisuals[yPos, xPos] = symbol;
 
-                            buildingArray[k] = new FactoryBuilding(xPos, yPos, teamName, symbol, unitType, 5, 4);
+                            buildingArray[k] = new FactoryBuilding(xPos, yPos, teamName, symbol, unitType, 5, 5);
                             break;
                         }
                 }
