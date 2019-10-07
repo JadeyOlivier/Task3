@@ -783,7 +783,7 @@ namespace JadeOlivier_19013088_Task1
                         if(numRounds% obj.Speed == 0)
                         {
                             if(obj.Health > (0.5 * obj.MaxHealth))
-                            {
+                            {                               
                                 Unit closest = obj.ClosestUnit(MapTracker.unitArray);
                                 if (obj.IsAttacking == false && obj.IsInRange(closest) == false)
                                 {
@@ -853,10 +853,15 @@ namespace JadeOlivier_19013088_Task1
                                     }
 
                                 }
-                                else if (obj.IsInRange(closest) == true)
+                                else 
                                 {
-                                    obj.IsAttacking = true;
-                                    obj.Combat(closest);
+                                    for (int i = 0; i < MapTracker.unitArray.Length; i++)
+                                    {
+                                        if (obj.IsInRange(MapTracker.unitArray[i]) == true)
+                                        {
+                                            obj.Combat(MapTracker.unitArray[i]);
+                                        }
+                                    }
                                 }
                             }
                             else
