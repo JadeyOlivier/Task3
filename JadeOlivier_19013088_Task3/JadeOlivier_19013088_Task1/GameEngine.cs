@@ -68,7 +68,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.XPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[obj.YPos, 19] = '.';
+                                                                    mapTracker.mapVisuals[obj.YPos, HEIGHT - 1] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -98,7 +98,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.YPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[19, obj.XPos] = '.';
+                                                                    mapTracker.mapVisuals[WIDTH - 1, obj.XPos] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -145,7 +145,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.XPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[obj.YPos, 19] = '.';
+                                                                    mapTracker.mapVisuals[obj.YPos, HEIGHT - 1] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -175,7 +175,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.YPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[19, obj.XPos] = '.';
+                                                                    mapTracker.mapVisuals[WIDTH - 1, obj.XPos] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -227,7 +227,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.XPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[obj.YPos, 19] = '.';
+                                                                    mapTracker.mapVisuals[obj.YPos, HEIGHT - 1] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -257,7 +257,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.YPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[19, obj.XPos] = '.';
+                                                                    mapTracker.mapVisuals[WIDTH - 1, obj.XPos] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -304,7 +304,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.XPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[obj.YPos, 19] = '.';
+                                                                    mapTracker.mapVisuals[obj.YPos, HEIGHT - 1] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -334,7 +334,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.YPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[19, obj.XPos] = '.';
+                                                                    mapTracker.mapVisuals[WIDTH - 1, obj.XPos] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -438,7 +438,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.XPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[obj.YPos, 19] = '.';
+                                                                    mapTracker.mapVisuals[obj.YPos, HEIGHT - 1] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -468,7 +468,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.YPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[19, obj.XPos] = '.';
+                                                                    mapTracker.mapVisuals[WIDTH - 1, obj.XPos] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -515,7 +515,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.XPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[obj.YPos, 19] = '.';
+                                                                    mapTracker.mapVisuals[obj.YPos, HEIGHT - 1] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -545,7 +545,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.YPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[19, obj.XPos] = '.';
+                                                                    mapTracker.mapVisuals[WIDTH - 1, obj.XPos] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -597,7 +597,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.XPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[obj.YPos, 19] = '.';
+                                                                    mapTracker.mapVisuals[obj.YPos, HEIGHT - 1] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -627,7 +627,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.YPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[19, obj.XPos] = '.';
+                                                                    mapTracker.mapVisuals[WIDTH - 1, obj.XPos] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -674,7 +674,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.XPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[obj.YPos, 19] = '.';
+                                                                    mapTracker.mapVisuals[obj.YPos, HEIGHT - 1] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -704,7 +704,7 @@ namespace JadeOlivier_19013088_Task1
                                                                 {
                                                                     obj.YPos = 0;
                                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                                    mapTracker.mapVisuals[19, obj.XPos] = '.';
+                                                                    mapTracker.mapVisuals[WIDTH - 1, obj.XPos] = '.';
                                                                 }
                                                                 break;
                                                             }
@@ -801,7 +801,7 @@ namespace JadeOlivier_19013088_Task1
                                                 {
                                                     obj.XPos = 0;
                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                    mapTracker.mapVisuals[obj.YPos, 19] = '.';
+                                                    mapTracker.mapVisuals[obj.YPos, HEIGHT - 1] = '.';
                                                 }
                                                 break;
                                             }
@@ -831,7 +831,7 @@ namespace JadeOlivier_19013088_Task1
                                                 {
                                                     obj.YPos = 0;
                                                     MapTracker.mapVisuals[obj.YPos, obj.XPos] = obj.Symbol;
-                                                    mapTracker.mapVisuals[19, obj.XPos] = '.';
+                                                    mapTracker.mapVisuals[WIDTH - 1, obj.XPos] = '.';
                                                 }
                                                 break;
                                             }

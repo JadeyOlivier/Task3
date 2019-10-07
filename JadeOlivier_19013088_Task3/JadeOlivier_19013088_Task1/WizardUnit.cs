@@ -115,7 +115,37 @@ namespace JadeOlivier_19013088_Task1
 
         public override bool IsInRange(Unit unitInRange)
         {
-            throw new NotImplementedException();
+            bool inRange = false; ;
+            string typeCheck = unitInRange.GetType().ToString();
+            string[] splitArray = typeCheck.Split('.');
+            typeCheck = splitArray[splitArray.Length - 1];
+
+            if (typeCheck == "MeleeUnit")
+            {
+                MeleeUnit mu = (MeleeUnit)unitInRange;
+                if ((mu.YPos == this.YPos && Math.Abs(mu.XPos - this.XPos) == 2) || (mu.XPos == this.XPos && Math.Abs(mu.YPos - this.YPos) == 2))
+                {
+                    inRange = true;
+                }
+                else
+                {
+                    inRange = false;
+                }
+            }
+            else if (typeCheck == "RangedUnit")
+            {
+                RangedUnit ru = (RangedUnit)unitInRange;
+                if ((ru.YPos == this.YPos && Math.Abs(ru.XPos - this.XPos) == 2) || (ru.XPos == this.XPos && Math.Abs(ru.YPos - this.YPos) == 2))
+                {
+                    inRange = true;
+                }
+                else
+                {
+                    inRange = false;
+                }
+            }
+
+            return inRange;
         }
 
         public override string Move(Unit unitToEngage)

@@ -374,10 +374,22 @@ namespace JadeOlivier_19013088_Task1
                     inRange = false;
                 }
             }
-            else
+            else if (typeCheck == "RangedUnit")
             {
                 RangedUnit ru = (RangedUnit)unitInRange;
                 if ((ru.YPos == this.YPos && Math.Abs(ru.XPos - this.XPos) == 2) || (ru.XPos == this.XPos && Math.Abs(ru.YPos - this.YPos) == 2))
+                {
+                    inRange = true;
+                }
+                else
+                {
+                    inRange = false;
+                }
+            }
+            else if (typeCheck == "WizardUnit")
+            {
+                WizardUnit wu = (WizardUnit)unitInRange;
+                if ((wu.YPos == this.YPos && Math.Abs(wu.XPos - this.XPos) == 2) || (wu.XPos == this.XPos && Math.Abs(wu.YPos - this.YPos) == 2))
                 {
                     inRange = true;
                 }
